@@ -1,23 +1,10 @@
 fun main() {
-    while (true) {
-        print("Enter student name (or quit): ")
-        val name = readln()!!
+    print("Enter the mark: ")
+    val mark = readLine()!!.toDouble()
 
-        // Stop the loop if the user typed quit
-        if (name == "quit") {
-            break
-        }
+    val student = Student("1", "Denji", "Computing", mark)
 
-        print("Enter student ID: ")
-        val id = readln()!!
-
-        print("Enter course: ")
-        val course = readln()!!
-
-        print("Enter mark: ")
-        val mark = readln()!!.toDouble()   // toDouble() converts the String to a Double
-
-        val student = Student(id, name, course, mark)
-        println(student)
-    }
+    println("Mark: ${student.mark}")
+    println("Grade: ${student.getGrade()}")
+    println("Passed: ${student.didPass()}")
 }
