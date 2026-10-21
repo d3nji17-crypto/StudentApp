@@ -1,10 +1,13 @@
 open class Student(
     val id: String,
-    protected val name: String,
+    nameIn: String,
     protected val course: String,
     protected val mark: Double
 ) {
     protected val modules: MutableList<Module> = mutableListOf()
+
+    var name = nameIn
+        protected set
 
     fun getGrade(): String {
         return when {

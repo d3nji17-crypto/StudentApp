@@ -18,7 +18,7 @@ class University {
     fun findStudentsByName(name: String): MutableList<Student> {
         val matches = mutableListOf<Student>()
         for (student in students) {
-            if (student.hasName(name)) {
+            if (student.name == name) {
                 matches.add(student)
             }
         }
