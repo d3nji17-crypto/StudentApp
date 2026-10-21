@@ -1,4 +1,10 @@
-class Student(val id: String, val name: String, val course: String, val mark: Double) {
+open class Student(
+    val id: String,
+    protected val name: String,
+    protected val course: String,
+    protected val mark: Double
+) {
+    protected val modules: MutableList<Module> = mutableListOf()
 
     fun getGrade(): String {
         return when {
@@ -11,10 +17,12 @@ class Student(val id: String, val name: String, val course: String, val mark: Do
     }
 
     fun didPass(): Boolean {
-        return mark <= 40
+        return mark >= 40
     }
 
+
+
     override fun toString(): String {
-        return "Name: $name Course: $course Mark: $mark"
+        return "ID: $id Name: $name Course: $course Mark: $mark"
     }
 }

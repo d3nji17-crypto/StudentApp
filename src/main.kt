@@ -1,6 +1,6 @@
 fun main() {
     print("Enter the mark: ")
-    val mark = readLine()!!.toDouble()
+    val mark = readln().toDouble()
 
     val student = Student("1", "Denji", "Computing", mark)
 
